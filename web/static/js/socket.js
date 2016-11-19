@@ -54,9 +54,17 @@ let socket = new Socket("/socket", {params: {token: window.userToken}})
 socket.connect()
 
 // Now that you are connected, you can join channels with a topic:
-let channel = socket.channel("topic:subtopic", {})
+let channel = socket.channel("github_push:lobby", {})
 channel.join()
   .receive("ok", resp => { console.log("Joined successfully", resp) })
   .receive("error", resp => { console.log("Unable to join", resp) })
+
+channel.on("new_push", payload => {
+  console.log("new_push", payload)
+  let pushList = document.getElementById("push_list")
+  let pushItem = document.createElement("li")
+  pushItem.innerText = `${payload.pusher.name} - ${payload.head_commit.message}`
+  pushList.appendChild(pushItem)
+})
 
 export default socket

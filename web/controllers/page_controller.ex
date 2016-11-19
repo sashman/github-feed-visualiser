@@ -6,7 +6,9 @@ defmodule GithubFeedVisualiser.PageController do
   end
 
   def push(conn, params) do
-    IO.inspect params
+
+    GithubFeedVisualiser.Endpoint.broadcast("github_push:lobby", "new_push", params)
+
     conn
     |> send_resp(200, "Push data received")
   end

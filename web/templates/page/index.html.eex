@@ -1,11 +1,13 @@
-<div class="jumbotron">
+ <div class="jumbotron">
   <h2>Github feed</h2>
 </div>
 
 <div class="row marketing">
-  <div class="col-lg-6">
+  <div class="col-lg-2">
   </div>
 
-  <div class="col-lg-6">
+  <div class="col-lg-10">
+    <ul id="push_list">
+    </ul>
   </div>
 </div>

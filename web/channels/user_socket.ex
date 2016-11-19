@@ -3,6 +3,7 @@ defmodule GithubFeedVisualiser.UserSocket do
 
   ## Channels
   # channel "room:*", GithubFeedVisualiser.RoomChannel
+  channel "github_push:*", GithubFeedVisualiser.GithubPushChannel
 
   ## Transports
   transport :websocket, Phoenix.Transports.WebSocket
