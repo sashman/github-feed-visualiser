@@ -63,8 +63,9 @@ channel.on("new_push", payload => {
   console.log("new_push", payload)
   let pushList = document.getElementById("push_list")
   let pushItem = document.createElement("li")
+  pushItem.className += " list-grou-item";
   pushItem.innerText = `${payload.pusher.name} - ${payload.head_commit.message}`
-  pushList.appendChild(pushItem)
+  pushList.insertBefore(pushItem, pushList.firstChild)
 })
 
 export default socket

@@ -7,7 +7,7 @@
   </div>
 
   <div class="col-lg-10">
-    <ul id="push_list">
+    <ul id="push_list" class="list-group">
     </ul>
   </div>
 </div>
